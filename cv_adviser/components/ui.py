@@ -48,7 +48,8 @@ def render_sidebar():
             Pabitra Mondal, 25MA60R13  
             Sanchita Ghosh, 25MA60R33  
 
-            **AI/ML (MA60274), Semester-II** M.Tech. in CSDP, Dept. of Mathematics  
+            **AI/ML (MA60274), Semester-II** 
+            M.Tech. in CSDP, Dept. of Mathematics  
         """)
 
         # 🔹 IIT KGP Logo (centered)
@@ -60,7 +61,7 @@ def render_sidebar():
                 st.warning("Logo not found")
 
             st.markdown("""
-                Indian Institute of Technology Kharagpur
+                **IIT Kharagpur**
             """)
 
         st.markdown("---")
