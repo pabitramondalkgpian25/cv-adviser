@@ -2,7 +2,8 @@
 components/ui.py
 All Streamlit UI rendering functions for CV Adviser.
 """
-
+import os
+logo_path = "iitkgplogo1.png"
 import streamlit as st
 from utils.helpers import build_download_bundle
 
@@ -58,7 +59,10 @@ def render_sidebar():
         # 🔹 IIT KGP Logo (centered)
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
-            st.image("iitkgplogo1.png", width=120)
+            if os.path.exists(logo_path):
+                st.image(logo_path, width=120)
+            else:
+                st.warning("Logo not found")
 
         st.markdown("---")
 
@@ -82,7 +86,7 @@ def render_header():
     try:
         col1, col2, col3 = st.columns([20, 10, 20])
         with col2:
-            st.image("assets/logo.png", width=150)
+            st.image("logo.png", width=150)
     except Exception:
         pass
 
