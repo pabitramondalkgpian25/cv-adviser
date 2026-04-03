@@ -3,7 +3,7 @@ components/ui.py
 All Streamlit UI rendering functions for CV Adviser.
 """
 import os
-logo_path = "iitkgplogo1.png"
+logo_path = "cv_adviser/assets/iitkgplogo1.png"
 import streamlit as st
 from utils.helpers import build_download_bundle
 
@@ -19,7 +19,7 @@ def render_sidebar():
         try:
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
-                st.image("assets/logo.png", width=100)
+                st.image("assets/CV_Advisor logo.png", width=100)
         except Exception:
             st.markdown("### 📄 CV Adviser")
 
