@@ -3,10 +3,11 @@ components/ui.py
 All Streamlit UI rendering functions for CV Adviser.
 """
 import os
-logo_path = "cv_adviser/assets/iitkgplogo1.png"
-logo_path1 = "cv_adviser/assets/CV_Advisor logo.png"
 import streamlit as st
 from utils.helpers import build_download_bundle
+
+logo_path = "cv_adviser/assets/iitkgplogo1.png"
+logo_path1 = "cv_adviser/assets/CV_Advisor logo.png"
 
 
 # ─────────────────────────────────────────────────────────────
@@ -20,7 +21,7 @@ def render_sidebar():
         try:
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
-                st.image("(logo_path1", width=100)
+                st.image(logo_path1, width=100)
         except Exception:
             st.markdown("### 📄 CV Adviser")
 
@@ -40,16 +41,15 @@ def render_sidebar():
 
         # 🔹 GROUP PROJECT DETAILS
         st.markdown("""
-                **A GROUP PROJECT BY**
+            **A GROUP PROJECT BY**
 
             Arnab Mukherjee, 25MA60R05  
             Sagar Kumar Khairwar, 25MA60R12  
             Pabitra Mondal, 25MA60R13  
             Sanchita Ghosh, 25MA60R33  
 
-            **AI/ML (MA60274), Semester-II**  
-            M.Tech. in CSDP, Dept. of Mathematics  
-            """)
+            **AI/ML (MA60274), Semester-II** M.Tech. in CSDP, Dept. of Mathematics  
+        """)
 
         # 🔹 IIT KGP Logo (centered)
         col1, col2, col3 = st.columns([1, 2, 1])
@@ -61,7 +61,7 @@ def render_sidebar():
 
             st.markdown("""
                 Indian Institute of Technology Kharagpur
-            )
+            """)
 
         st.markdown("---")
 
@@ -69,7 +69,7 @@ def render_sidebar():
         st.markdown("#### ℹ️ How to Use")
         st.markdown(
             """
-            1. Select your **target job role**  
+            1. Select your **target job role** 
             2. **Upload** your CV as a PDF  
             3. Wait for the analysis to complete  
             4. **Download** your reports  
