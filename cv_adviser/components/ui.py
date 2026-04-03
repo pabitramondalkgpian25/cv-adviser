@@ -2,71 +2,81 @@
 components/ui.py
 All Streamlit UI rendering functions for CV Adviser.
 """
+
 import streamlit as st
 from utils.helpers import build_download_bundle
 
 
+# ─────────────────────────────────────────────────────────────
+# SIDEBAR
+# ─────────────────────────────────────────────────────────────
 def render_sidebar():
     """Render the left sidebar with logo, description, and links."""
     with st.sidebar:
-        # Logo
+
+        # 🔹 Top Logo
         try:
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
                 st.image("assets/logo.png", width=100)
         except Exception:
-            st.markdown("### 📄 CV AdvIser")
+            st.markdown("### 📄 CV Adviser")
 
+        # 🔹 Description
         st.markdown(
             """
             <p style='text-align: justify; font-size: 0.9em;'>
-            <strong>CV AdvIser</strong> is an AI-powered CV analysis platform that helps
+            <strong>CV Adviser</strong> is an AI-powered CV analysis platform that helps
             students and job seekers evaluate resumes, identify skill gaps, get grammar
             feedback and prepare for future applications.
             </p>
             """,
             unsafe_allow_html=True
         )
-        st.markdown("---")
-
-        col1, col2, col3 = st.columns([1,2,1])
-
-st.markdown(
-    """
-    <p style='text-align: center; font-size: 0.9em;'>
-        <b>A GROUP PROJECT BY</b><br><br>
-
-        Arnab Mukherjee,      25MA60R05 <br>
-        Sagar Kumar Khairwar, 25MA60R12 <br>
-        Pabitra Mondal,       25MA60R13 <br>
-        Sanchita Ghosh,       25MA60R33 <br><br>
-
-        <b>AI/ML (MA60274), Semester-II</b><br>
-        M.Tech. in CSDP, Dept. of Mathematics<br>
-        Indian Institute of Technology Kharagpur
-    </p>
-    """,
-    unsafe_allow_html=True
-)
-
-with col2:
-    st.image("iitkgplogo1.png", width=120)        
-
-        
 
         st.markdown("---")
+
+        # 🔹 GROUP PROJECT DETAILS
+        st.markdown(
+            """
+            <p style='text-align: center; font-size: 0.9em;'>
+                <b>A GROUP PROJECT BY</b><br><br>
+
+                Arnab Mukherjee, 25MA60R05 <br>
+                Sagar Kumar Khairwar, 25MA60R12 <br>
+                Pabitra Mondal, 25MA60R13 <br>
+                Sanchita Ghosh, 25MA60R33 <br><br>
+
+                <b>AI/ML (MA60274), Semester-II</b><br>
+                M.Tech. in CSDP, Dept. of Mathematics<br>
+                Indian Institute of Technology Kharagpur
+            </p>
+            """,
+            unsafe_allow_html=True
+        )
+
+        # 🔹 IIT KGP Logo (centered)
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image("assets/kgp_logo.png", width=120)
+
+        st.markdown("---")
+
+        # 🔹 How to Use
         st.markdown("#### ℹ️ How to Use")
         st.markdown(
             """
-            1. Select your **target job role**
-            2. **Upload** your CV as a PDF
-            3. Wait for the analysis to complete
-            4. **Download** your reports
+            1. Select your **target job role**  
+            2. **Upload** your CV as a PDF  
+            3. Wait for the analysis to complete  
+            4. **Download** your reports  
             """
         )
-       
 
 
+# ─────────────────────────────────────────────────────────────
+# HEADER
+# ─────────────────────────────────────────────────────────────
 def render_header():
     """Render the main page header with logo and title."""
     try:
@@ -80,15 +90,20 @@ def render_header():
         "<h2 style='text-align: center; color: #2E5090;'>CV Adviser</h2>",
         unsafe_allow_html=True
     )
+
     st.markdown(
         "<h4 style='text-align: center; color: #555;'>"
         "Evaluation · Skill Analysis · Scoring · Grammar Review"
         "</h4>",
         unsafe_allow_html=True
     )
+
     st.markdown("<hr>", unsafe_allow_html=True)
 
 
+# ─────────────────────────────────────────────────────────────
+# RESULTS
+# ─────────────────────────────────────────────────────────────
 def render_results(
     eval_result: str,
     scoring_result: str,
@@ -98,9 +113,10 @@ def render_results(
     role: str = ""
 ):
     """Render all analysis results in organized tabs with download buttons."""
+
     st.success("✅ CV analysis complete!")
 
-    # ── TABS ──────────────────────────────────────────────────────────────────
+    # Tabs
     tabs = ["📊 Scoring", "📋 Evaluation", "✏️ Grammar"]
     if jd_text.strip() and skill_gap_result:
         tabs.append("🛠 Skill Gap")
@@ -124,11 +140,12 @@ def render_results(
             st.markdown("### 🛠 Skill Gap Analysis")
             st.markdown(skill_gap_result)
 
-    # ── DOWNLOADS ─────────────────────────────────────────────────────────────
+    # Downloads
     st.markdown("---")
     st.markdown("### 📥 Download Reports")
 
     col1, col2, col3 = st.columns(3)
+
     with col1:
         st.download_button(
             "📋 Evaluation Report",
@@ -137,6 +154,7 @@ def render_results(
             "text/markdown",
             use_container_width=True
         )
+
     with col2:
         st.download_button(
             "📊 Scoring Report",
@@ -145,6 +163,7 @@ def render_results(
             "text/markdown",
             use_container_width=True
         )
+
     with col3:
         st.download_button(
             "✏️ Grammar Report",
@@ -156,6 +175,7 @@ def render_results(
 
     if jd_text.strip() and skill_gap_result:
         col4, col5 = st.columns([1, 1])
+
         with col4:
             st.download_button(
                 "🛠 Skill Gap Report",
@@ -164,10 +184,12 @@ def render_results(
                 "text/markdown",
                 use_container_width=True
             )
+
         with col5:
             full_report = build_download_bundle(
                 eval_result, scoring_result, grammar_result, skill_gap_result, role
             )
+
             st.download_button(
                 "📦 Full Bundle (All Reports)",
                 full_report,
@@ -179,6 +201,7 @@ def render_results(
         full_report = build_download_bundle(
             eval_result, scoring_result, grammar_result, "", role
         )
+
         st.download_button(
             "📦 Download Full Report",
             full_report,
