@@ -15,7 +15,7 @@ google_api_key = os.getenv("GOOGLE_API_KEY")
 
 # ── PAGE CONFIG ────────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="CV Adviser",
+    page_title="CV AdvIser",
     layout="centered",
     page_icon="📄",
     initial_sidebar_state="expanded"
