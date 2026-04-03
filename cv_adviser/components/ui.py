@@ -15,12 +15,12 @@ def render_sidebar():
             with col2:
                 st.image("assets/logo.png", width=100)
         except Exception:
-            st.markdown("### 📄 CV Adviser")
+            st.markdown("### 📄 CV AdvIser")
 
         st.markdown(
             """
             <p style='text-align: justify; font-size: 0.9em;'>
-            <strong>CV Adviser</strong> is an AI-powered CV analysis platform that helps
+            <strong>CV AdvIser</strong> is an AI-powered CV analysis platform that helps
             students and job seekers evaluate resumes, identify skill gaps, get grammar
             feedback and prepare for future applications.
             </p>
@@ -29,35 +29,42 @@ def render_sidebar():
         )
         st.markdown("---")
 
-        st.markdown(
-            """
-            <p style='text-align: center; font-size: 0.85em;'>
-            Pabitra Mondal, M.Tech, CSDP<br>
-            Batch of 2025–27, IIT Kharagpur
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
-        st.markdown("---")
+        col1, col2, col3 = st.columns([1,2,1])
 
-        st.markdown(
-            "🔗 [LinkedIn](https://www.linkedin.com/in/pabitra-mondal-aa6151176) &nbsp;|&nbsp; "
-            "💻 [GitHub](https://github.com/pabitramondalkgpian25)",
-            unsafe_allow_html=True
-        )
+st.markdown(
+    """
+    <p style='text-align: center; font-size: 0.9em;'>
+        <b>A GROUP PROJECT BY</b><br><br>
+
+        Arnab Mukherjee,      25MA60R05 <br>
+        Sagar Kumar Khairwar, 25MA60R12 <br>
+        Pabitra Mondal,       25MA60R13 <br>
+        Sanchita Ghosh,       25MA60R33 <br><br>
+
+        <b>AI/ML (MA60274), Semester-II</b><br>
+        M.Tech. in CSDP, Dept. of Mathematics<br>
+        Indian Institute of Technology Kharagpur
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+
+with col2:
+    st.image("iitkgplogo1.png", width=120)        
+
+        
 
         st.markdown("---")
         st.markdown("#### ℹ️ How to Use")
         st.markdown(
             """
             1. Select your **target job role**
-            2. *(Optional)* Paste a **Job Description** for skill gap analysis
-            3. **Upload** your CV as a PDF
-            4. Wait for the analysis to complete
-            5. **Download** your reports
+            2. **Upload** your CV as a PDF
+            3. Wait for the analysis to complete
+            4. **Download** your reports
             """
         )
-        st.info("Clone the repo from GitHub to run locally.")
+       
 
 
 def render_header():
