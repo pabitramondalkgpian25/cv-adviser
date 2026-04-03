@@ -38,23 +38,18 @@ def render_sidebar():
         st.markdown("---")
 
         # 🔹 GROUP PROJECT DETAILS
-        st.markdown(
-            """
-            <p style='text-align: center; font-size: 0.9em;'>
-                <b>A GROUP PROJECT BY</b><br><br>
+        st.markdown("""
+                **A GROUP PROJECT BY**
 
-                Arnab Mukherjee, 25MA60R05 <br>
-                Sagar Kumar Khairwar, 25MA60R12 <br>
-                Pabitra Mondal, 25MA60R13 <br>
-                Sanchita Ghosh, 25MA60R33 <br><br>
+            Arnab Mukherjee, 25MA60R05  
+            Sagar Kumar Khairwar, 25MA60R12  
+            Pabitra Mondal, 25MA60R13  
+            Sanchita Ghosh, 25MA60R33  
 
-                <b>AI/ML (MA60274), Semester-II</b><br>
-                M.Tech. in CSDP, Dept. of Mathematics<br>
-                Indian Institute of Technology Kharagpur
-            </p>
-            """,
-            unsafe_allow_html=True
-        )
+            **AI/ML (MA60274), Semester-II**  
+            M.Tech. in CSDP, Dept. of Mathematics  
+            Indian Institute of Technology Kharagpur
+            """)
 
         # 🔹 IIT KGP Logo (centered)
         col1, col2, col3 = st.columns([1, 2, 1])
