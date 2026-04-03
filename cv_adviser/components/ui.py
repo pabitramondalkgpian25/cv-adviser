@@ -48,16 +48,19 @@ def render_sidebar():
 
             **AI/ML (MA60274), Semester-II**  
             M.Tech. in CSDP, Dept. of Mathematics  
-            Indian Institute of Technology Kharagpur
             """)
 
         # 🔹 IIT KGP Logo (centered)
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             if os.path.exists(logo_path):
-                st.image(logo_path, width=120)
+                st.image(logo_path, width=150)
             else:
                 st.warning("Logo not found")
+
+            st.markdown("""
+                Indian Institute of Technology Kharagpur
+            )
 
         st.markdown("---")
 
