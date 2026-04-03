@@ -21,7 +21,7 @@ def render_sidebar():
         try:
             col1, col2, col3 = st.columns([1, 2, 1])
             with col2:
-                st.image(logo_path1, width=100)
+                st.image(logo_path1, width=150)
         except Exception:
             st.markdown("### 📄 CV Adviser")
 
@@ -48,7 +48,7 @@ def render_sidebar():
             Pabitra Mondal, 25MA60R13  
             Sanchita Ghosh, 25MA60R33  
 
-            **AI/ML (MA60274), Semester-II** 
+            **AI/ML  (MA60274),  Semester - II** 
             M.Tech. in CSDP, Dept. of Mathematics  
         """)
 
@@ -56,7 +56,7 @@ def render_sidebar():
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             if os.path.exists(logo_path):
-                st.image(logo_path, width=150)
+                st.image(logo_path, width=180)
             else:
                 st.warning("Logo not found")
 
