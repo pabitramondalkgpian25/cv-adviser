@@ -27,7 +27,7 @@ render_header()
 
 # ── MODEL ─────────────────────────────────────────────────────────────────────
 if not google_api_key:
-    st.error("❌ GOOGLE_API_KEY not found. Please set it in your .env file.")
+    st.error("GOOGLE_API_KEY not found. Please set it in your .env file.")
     st.stop()
 
 model = ChatGoogleGenerativeAI(
@@ -148,7 +148,7 @@ if st.checkbox("📎 Add Job Description for Skill Gap Analysis"):
         placeholder="Paste the full job description here..."
     )
 
-uploaded_cv = st.file_uploader("📤 Upload your CV (PDF only)", type=["pdf"])
+uploaded_cv = st.file_uploader("Upload your CV (PDF only)", type=["pdf"])
 
 # ── PROCESSING ────────────────────────────────────────────────────────────────
 if uploaded_cv and job_role:
@@ -158,7 +158,7 @@ if uploaded_cv and job_role:
         st.error(msg)
         st.stop()
 
-    with st.spinner("🔍 Analysing your CV... Please wait."):
+    with st.spinner("Analysing your CV... Please wait."):
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
             tmp.write(uploaded_cv.read())
             tmp_path = tmp.name
