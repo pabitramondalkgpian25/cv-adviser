@@ -23,7 +23,7 @@ def render_sidebar():
             with col2:
                 st.image(logo_path1, width=150)
         except Exception:
-            st.markdown("### 📄 CV Adviser")
+            st.markdown("### CV AdvIser")
 
         # 🔹 Description
         st.markdown(
@@ -121,38 +121,38 @@ def render_results(
     st.success("✅ CV analysis complete!")
 
     # Tabs
-    tabs = ["📊 Scoring", "📋 Evaluation", "✏️ Grammar"]
+    tabs = ["Scoring", " Evaluation", "Grammar"]
     if jd_text.strip() and skill_gap_result:
-        tabs.append("🛠 Skill Gap")
+        tabs.append(" Skill Gap")
 
     tab_objects = st.tabs(tabs)
 
     with tab_objects[0]:
-        st.markdown("### 📊 CV Scoring & Rating")
+        st.markdown("### CV Scoring & Rating")
         st.markdown(scoring_result)
 
     with tab_objects[1]:
-        st.markdown("### 📋 CV Evaluation Summary")
+        st.markdown("### CV Evaluation Summary")
         st.markdown(eval_result)
 
     with tab_objects[2]:
-        st.markdown("### ✏️ Grammar & Formatting Feedback")
+        st.markdown("###  Grammar & Formatting Feedback")
         st.markdown(grammar_result)
 
     if len(tabs) == 4:
         with tab_objects[3]:
-            st.markdown("### 🛠 Skill Gap Analysis")
+            st.markdown("### Skill Gap Analysis")
             st.markdown(skill_gap_result)
 
     # Downloads
     st.markdown("---")
-    st.markdown("### 📥 Download Reports")
+    st.markdown("### Download Reports")
 
     col1, col2, col3 = st.columns(3)
 
     with col1:
         st.download_button(
-            "📋 Evaluation Report",
+            "Evaluation Report",
             eval_result,
             "CV_Evaluation.md",
             "text/markdown",
@@ -161,7 +161,7 @@ def render_results(
 
     with col2:
         st.download_button(
-            "📊 Scoring Report",
+            " Scoring Report",
             scoring_result,
             "CV_Scoring.md",
             "text/markdown",
@@ -170,7 +170,7 @@ def render_results(
 
     with col3:
         st.download_button(
-            "✏️ Grammar Report",
+            " Grammar Report",
             grammar_result,
             "Grammar_Feedback.md",
             "text/markdown",
@@ -182,7 +182,7 @@ def render_results(
 
         with col4:
             st.download_button(
-                "🛠 Skill Gap Report",
+                "Skill Gap Report",
                 skill_gap_result,
                 "Skill_Gap_Analysis.md",
                 "text/markdown",
@@ -195,7 +195,7 @@ def render_results(
             )
 
             st.download_button(
-                "📦 Full Bundle (All Reports)",
+                "Full Bundle (All Reports)",
                 full_report,
                 "CV_Master_Full_Report.md",
                 "text/markdown",
@@ -207,7 +207,7 @@ def render_results(
         )
 
         st.download_button(
-            "📦 Download Full Report",
+            "Download Full Report",
             full_report,
             "CV_Master_Full_Report.md",
             "text/markdown",
